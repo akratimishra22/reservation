@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Data
@@ -30,4 +31,7 @@ public class Reservation {
 
 	@Column(name = "endDate", nullable = false)
 	private LocalDate endDate;
+
+	@Column(name = "bookingAmount", nullable = false)
+	private BigDecimal bookingAmount;
 }
