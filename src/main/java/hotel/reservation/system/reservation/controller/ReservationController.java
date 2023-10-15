@@ -80,6 +80,7 @@ public class ReservationController {
                     Reservation reservationResponse = reservationService.makeReservation(reservation);
 
                     if (reservationResponse != null) {
+                        restTemplate.put(paymentsBaseUrl + "/" + paymentResponse.getBody().getId() + "/reservationId" + reservationResponse.getId(), null);
                         restTemplate.put(hotelsBaseUrl + "/" + reservationResponse.getHotelId() + "/decrement-rooms", null);
                         Map<String, String> requestBody = new HashMap<>();
                         requestBody.put("message", "Your room reservation is confirmed. Enjoy your stay!");
@@ -108,9 +109,8 @@ public class ReservationController {
             if (reservation == null) {
                 return new ResponseEntity<>("Reservation not found", HttpStatus.NOT_FOUND);
             }
-
             ResponseEntity<Payment> paymentResponse = restTemplate.exchange(
-                    paymentsBaseUrl + "/" + reservationId,
+                    paymentsBaseUrl + "/reservationId/" + reservationId,
                     HttpMethod.GET,
                     new HttpEntity<>(new HttpHeaders()),
                     Payment.class
