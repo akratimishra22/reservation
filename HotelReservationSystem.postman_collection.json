@@ -1,0 +1,1134 @@
+{
+	"info": {
+		"_postman_id": "beaa67a5-37b3-49ed-bb2b-572a6af73bfb",
+		"name": "HotelReservationSystem",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24311590"
+	},
+	"item": [
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "registerCustomer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Akrati Mishra\",\r\n    \"email\": \"akratimishra@gmail.com\",\r\n    \"password\": \"akratimishra@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/customers/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Aditi Mishra\",\r\n    \"email\": \"aditimishra@gmail.com\",\r\n    \"password\": \"aditimishra@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/customers/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCustomerById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/customers/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllCustomers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCustomer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ms Akrati Mishra\",\r\n    \"email\": \"akratimishra@gmail.com\",\r\n    \"password\": \"akratimishra@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/customers/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCustomer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/customers/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Hotel",
+			"item": [
+				{
+					"name": "makeHotel",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Hotel ABC\",\r\n    \"numberOfRooms\": 50\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8044/api/v1/hotels",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8044",
+							"path": [
+								"api",
+								"v1",
+								"hotels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "incrementNumberOfOccupiedRooms",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8044/api/v1/hotels/1/increment-rooms",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8044",
+							"path": [
+								"api",
+								"v1",
+								"hotels",
+								"1",
+								"increment-rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "decrementNumberOfOccupiedRooms",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8044/api/v1/hotels/1/decrement-rooms",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8044",
+							"path": [
+								"api",
+								"v1",
+								"hotels",
+								"1",
+								"decrement-rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "areRoomsAvailable",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Akrati Mishra\",\r\n    \"email\": \"akratimishra@gmail.com\",\r\n    \"password\": \"akratimishra@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8044/api/v1/hotels/1/rooms-available",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8044",
+							"path": [
+								"api",
+								"v1",
+								"hotels",
+								"1",
+								"rooms-available"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getHotelById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8044/api/v1/hotels/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8044",
+							"path": [
+								"api",
+								"v1",
+								"hotels",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllHotels",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8044/api/v1/hotels",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8044",
+							"path": [
+								"api",
+								"v1",
+								"hotels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateHotel",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Hotel ABC\",\r\n    \"numberOfRooms\": 60\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8044/api/v1/hotels/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8044",
+							"path": [
+								"api",
+								"v1",
+								"hotels",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteHotel",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8044/api/v1/hotels/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8044",
+							"path": [
+								"api",
+								"v1",
+								"hotels",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reservation",
+			"item": [
+				{
+					"name": "makeReservation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerId\": 1,\r\n    \"hotelId\": 1,\r\n    \"startDate\": \"2023-10-15\",\r\n    \"endDate\": \"2023-10-20\",\r\n    \"bookingAmount\": 682\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8077/api/v1/reservations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8077",
+							"path": [
+								"api",
+								"v1",
+								"reservations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getReservationrById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8077/api/v1/reservations/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8077",
+							"path": [
+								"api",
+								"v1",
+								"reservations",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllReservations",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8077/api/v1/reservations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8077",
+							"path": [
+								"api",
+								"v1",
+								"reservations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateReservation",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerId\": 1,\r\n    \"hotelId\": 1,\r\n    \"startDate\": \"2023-10-15\",\r\n    \"endDate\": \"2023-10-25\",\r\n    \"bookingAmount\": 800\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8077/api/v1/reservations/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8077",
+							"path": [
+								"api",
+								"v1",
+								"reservations",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteReservation",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8077/api/v1/reservations/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8077",
+							"path": [
+								"api",
+								"v1",
+								"reservations",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reserveRoom",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "//Make sure customer and hotel is created prior to running this request\r\n//Refer to end to end scenario for complete behavioural flow\r\n{\r\n    \"customerId\": 1,\r\n    \"hotelId\": 1,\r\n    \"startDate\": \"2023-10-20\",\r\n    \"endDate\": \"2023-10-25\",\r\n    \"bookingAmount\": 684\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8077/api/v1/reservations/reserve-room",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8077",
+							"path": [
+								"api",
+								"v1",
+								"reservations",
+								"reserve-room"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancelRoom",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "//Make sure reserveRoom is run prior to running this request\r\n//Refer to end to end scenario for complete behavioural flow",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8077/api/v1/reservations/cancel-room-reservation/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8077",
+							"path": [
+								"api",
+								"v1",
+								"reservations",
+								"cancel-room-reservation",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payment",
+			"item": [
+				{
+					"name": "makePayment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerId\": 1,\r\n    \"amount\": 100.50,\r\n    \"paymentMethod\": \"Credit Card\",\r\n    \"paymentStatus\": \"Pending\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8066/api/v1/payments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8066",
+							"path": [
+								"api",
+								"v1",
+								"payments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPaymentById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8066/api/v1/payments/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8066",
+							"path": [
+								"api",
+								"v1",
+								"payments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPayments",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8066/api/v1/payments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8066",
+							"path": [
+								"api",
+								"v1",
+								"payments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePayment",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"customerId\": 1,\r\n    \"reservationId\": 1,\r\n    \"amount\": 100.50,\r\n    \"paymentStatus\": \"Paid\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8066/api/v1/payments/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8066",
+							"path": [
+								"api",
+								"v1",
+								"payments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletePayment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8066/api/v1/payments/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8066",
+							"path": [
+								"api",
+								"v1",
+								"payments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notification",
+			"item": [
+				{
+					"name": "sendNotification",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message\": \"Hello, this is a test notification message.\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8055/api/v1/notifications/send",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8055",
+							"path": [
+								"api",
+								"v1",
+								"notifications",
+								"send"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EndToEnd",
+			"item": [
+				{
+					"name": "signupCustomer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Akrati Mishraa\",\r\n    \"email\": \"akratimishraa@gmail.com\",\r\n    \"password\": \"akratimishra@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/customers/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "makeHotel",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Hotel ABC\",\r\n    \"numberOfRooms\": 50\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8044/api/v1/hotels",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8044",
+							"path": [
+								"api",
+								"v1",
+								"hotels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getHotelById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8044/api/v1/hotels/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8044",
+							"path": [
+								"api",
+								"v1",
+								"hotels",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reserveRoom",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerId\": 1,\r\n    \"hotelId\": 1,\r\n    \"startDate\": \"2023-10-20\",\r\n    \"endDate\": \"2023-10-25\",\r\n    \"bookingAmount\": 684\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8077/api/v1/reservations/reserve-room",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8077",
+							"path": [
+								"api",
+								"v1",
+								"reservations",
+								"reserve-room"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getHotelByIdCheckRoomDecremented",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8044/api/v1/hotels/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8044",
+							"path": [
+								"api",
+								"v1",
+								"hotels",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPaymentById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8066/api/v1/payments/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8066",
+							"path": [
+								"api",
+								"v1",
+								"payments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getReservationrById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8077/api/v1/reservations/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8077",
+							"path": [
+								"api",
+								"v1",
+								"reservations",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancelRoom",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8077/api/v1/reservations/cancel-room-reservation/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8077",
+							"path": [
+								"api",
+								"v1",
+								"reservations",
+								"cancel-room-reservation",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getHotelByIdCheckRoomIncremented",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8044/api/v1/hotels/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8044",
+							"path": [
+								"api",
+								"v1",
+								"hotels",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPaymentByIdAfterRefund",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8066/api/v1/payments/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8066",
+							"path": [
+								"api",
+								"v1",
+								"payments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
