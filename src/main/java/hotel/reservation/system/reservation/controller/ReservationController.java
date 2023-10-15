@@ -11,6 +11,7 @@ import org.springframework.web.client.RestTemplate;
 
 import javax.validation.Valid;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -50,6 +51,40 @@ public class ReservationController {
         }
     }
 
+    @GetMapping
+    public ResponseEntity<List<Reservation>> getAllReservations() {
+        try {
+            List<Reservation> reservations = reservationService.getAllReservations();
+
+            if (reservations.isEmpty())
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+
+            return new ResponseEntity<>(reservations, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Reservation> updateReservation(@PathVariable Long id, @Valid @RequestBody Reservation updatedReservation) {
+        Reservation reservation = reservationService.updateReservation(id, updatedReservation);
+        if (reservation != null) {
+            return new ResponseEntity<>(reservation, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteReservation(@PathVariable Long id) {
+        boolean deleted = reservationService.deleteReservation(id);
+        if (deleted) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
     @PostMapping("/reserve-room")
     public ResponseEntity<String> reserveRoom(@RequestBody Reservation reservation) {
         try {
@@ -75,7 +110,7 @@ public class ReservationController {
                         Payment.class
                 );
 
-                if (paymentResponse != null) {
+                if (paymentResponse.getBody() != null) {
 
                     Reservation reservationResponse = reservationService.makeReservation(reservation);
 
@@ -116,7 +151,7 @@ public class ReservationController {
                     Payment.class
             );
 
-            if (paymentResponse == null) {
+            if (paymentResponse.getBody() == null) {
                 return new ResponseEntity<>("Payment not found", HttpStatus.NOT_FOUND);
             }
 
